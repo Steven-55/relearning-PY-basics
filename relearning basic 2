@@ -1,0 +1,81 @@
+# Question 1: Find the sum of all elements in a list
+def sum_list(lst):
+    return sum(lst)
+
+# Question 2: Count the occurrences of a character in a string
+def count_char(s, char):
+    return s.count(char)
+
+# Question 3: Find the GCD of two numbers
+import math
+def find_gcd(a, b):
+    return math.gcd(a, b)
+
+# Question 4: Generate a list of prime numbers up to n
+def primes_up_to_n(n):
+    primes = []
+    for num in range(2, n+1):
+        if all(num % i != 0 for i in range(2, int(math.sqrt(num)) + 1)):
+            primes.append(num)
+    return primes
+
+# Question 5: Convert Celsius to Fahrenheit
+def celsius_to_fahrenheit(c):
+    return (c * 9/5) + 32
+
+# Question 6: Check if a number is a perfect square
+def is_perfect_square(n):
+    return math.isqrt(n) ** 2 == n
+
+# Question 7: Remove duplicates from a list
+def remove_duplicates(lst):
+    return list(set(lst))
+
+# Question 8: Find the most frequent element in a list
+from collections import Counter
+def most_frequent(lst):
+    return Counter(lst).most_common(1)[0][0]
+
+# Question 9: Reverse the words in a sentence
+def reverse_words(sentence):
+    return " ".join(sentence.split()[::-1])
+
+# Question 10: Find the intersection of two lists
+def list_intersection(lst1, lst2):
+    return list(set(lst1) & set(lst2))
+
+# Testing the functions
+print(sum_list([1, 2, 3, 4, 5]))  # Output: 15
+print(count_char("hello", "l"))  # Output: 2
+print(find_gcd(48, 18))  # Output: 6
+print(primes_up_to_n(10))  # Output: [2, 3, 5, 7]
+print(celsius_to_fahrenheit(0))  # Output: 32
+print(is_perfect_square(25))  # Output: True
+print(remove_duplicates([1, 2, 2, 3, 4, 4, 5]))  # Output: [1, 2, 3, 4, 5]
+print(most_frequent([1, 3, 3, 3, 2, 2, 1]))  # Output: 3
+print(reverse_words("Hello world!"))  # Output: "world! Hello"
+print(list_intersection([1, 2, 3], [2, 3, 4]))  # Output: [2, 3]
+
+# NumPy Operations
+import numpy as np
+
+# Creating an identity matrix
+identity_matrix = np.eye(5)
+print(identity_matrix)
+
+# Generating a random array
+random_array = np.random.rand(3, 3)
+print(random_array)
+
+# Creating an array of evenly spaced values
+even_spaced = np.linspace(0, 10, 5)
+print(even_spaced)
+
+# Performing matrix multiplication
+matrix_a = np.random.randint(1, 10, (3, 3))
+matrix_b = np.random.randint(1, 10, (3, 3))
+matrix_product = np.dot(matrix_a, matrix_b)
+
+print("Matrix A:\n", matrix_a)
+print("Matrix B:\n", matrix_b)
+print("Matrix Product:\n", matrix_product)
